@@ -1,143 +1,93 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Page title shown in browser tab -->
+  <title>Tenant - ProofIt</title>
 
-.phone-frame {
-  width: 360px;
-  border: 10px solid #111;
-  border-radius: 30px;
-  background: #e9e9e9;
-}
+  <!-- MAIN STYLESHEET (ALL UI LOOK + FEEL IS CONTROLLED HERE) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-.app {
-  padding: 20px;
-  text-align: center;
-}
+<body>
 
-.logo span,
-.title span {
-  color: #4da3ff;
-}
+<!-- PHONE FRAME WRAPPER (pure UI container for mobile look) -->
+<div class="phone-frame">
 
-.icon-box {
-  font-size: 30px;
-  margin: 20px auto;
-  width: 60px;
-  height: 60px;
-  background: #111;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-}
+  <!-- APP CONTAINER (everything inside your app lives here) -->
+  <div class="app">
 
-.subtitle {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 30px;
-}
+    <!-- TOP BAR (header area with navigation + page title) -->
+    <div class="top-bar">
 
-.helper {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
+      <!-- HOME BUTTON (calls JS function goHome() in script.js) -->
+      <button class="home-btn" onclick="goHome()">🏠</button>
 
-.card {
-  background: #f7f7f7;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
+      <!-- PAGE TITLE (this is static text for this page) -->
+      <h2>New Move-In Report</h2>
 
-.card:hover {
-  background: #e3e3e3;
-}
+      <!-- BADGE LABEL (pure UI indicator for role/type) -->
+      <span class="badge">Tenant</span>
+    </div>
 
-.footer {
-  margin-top: 30px;
-  font-size: 11px;
-  color: #aaa;
-}
+    <!-- FORM CONTAINER (main content area of this page) -->
+    <div class="form-container">
 
-/* ===== TENANT PAGE ===== */
+      <!-- MAIN HEADING (intro text for user) -->
+      <h1>Let's get started</h1>
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+      <!-- SUB TEXT / HELPER INSTRUCTION -->
+      <p class="helper">Fill in your details before the walkthrough</p>
 
-.home-btn {
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 10px;
-  cursor: pointer;
-}
+      <!-- INFO BOX (highlighted message / reassurance UI element) -->
+      <div class="info-box">
+        🔒 Your completed report is emailed directly to you.
+      </div>
 
-.badge {
-  background: #f5b14c;
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-}
+      <!-- PROPERTY ADDRESS INPUT -->
+      <label>PROPERTY ADDRESS</label>
+      <input type="text" />
 
-.form-container {
-  text-align: left;
-}
+      <!-- ROW GROUP (two inputs side-by-side layout controlled in CSS) -->
+      <div class="row">
 
-.info-box {
-  background: #dfe7f2;
-  border: 1px solid #4da3ff;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 15px 0;
-  font-size: 14px;
-}
+        <!-- NAME INPUT -->
+        <div>
+          <label>YOUR NAME</label>
+          <input type="text" />
+        </div>
 
-label {
-  font-size: 11px;
-  color: #777;
-  margin-top: 15px;
-  display: block;
-}
+        <!-- EMAIL INPUT -->
+        <div>
+          <label>YOUR EMAIL</label>
+          <input type="email" />
+        </div>
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
+      </div>
 
-.row {
-  display: flex;
-  gap: 10px;
-}
+      <!-- LEASE DATE INPUT -->
+      <label>LEASE START DATE</label>
+      <input type="date" />
 
-.row div {
-  flex: 1;
-}
+      <!-- PRIMARY ACTION BUTTON -->
+      <!-- This triggers JS function startWalkthrough() in script.js -->
+      <button class="primary-btn" onclick="startWalkthrough()">
+        Start Walkthrough →
+      </button>
 
-.primary-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  background: #111;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
+    </div>
+    <!-- END FORM CONTAINER -->
+
+  </div>
+  <!-- END APP -->
+
+</div>
+<!-- END PHONE FRAME -->
+
+<!-- JAVASCRIPT FILE (ALL LOGIC, NAVIGATION, BUTTON ACTIONS LIVE HERE) -->
+<script src="script.js?v=2"></script>
+
+</body>
+</html>
