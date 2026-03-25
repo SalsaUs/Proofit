@@ -6,53 +6,50 @@
   <title>Tenant - ProofIt</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
 <div class="phone-frame">
   <div class="app">
 
-    <h1 class="logo">Proof<span>It</span></h1>
-
-    <h2 class="title">Tenant Portal</h2>
-    <p class="subtitle">MOVE-IN CONDITION REPORT</p>
-
-    <div class="card">
-      <div>
-        <strong>Start Report</strong>
-        <p>Begin documenting your property</p>
-      </div>
-      <span>→</span>
+    <div class="top-bar">
+      <button class="home-btn" onclick="goHome()">🏠</button>
+      <h2>New Move-In Report</h2>
+      <span class="badge">Tenant</span>
     </div>
 
-    <div class="card">
-      <div>
-        <strong>Upload Photos</strong>
-        <p>Add condition evidence</p>
-      </div>
-      <span>→</span>
-    </div>
+    <div class="form-container">
+      <h1>Let's get started</h1>
+      <p class="helper">Fill in your details before the walkthrough</p>
 
-    <div class="card">
-      <div>
-        <strong>Submit Report</strong>
-        <p>Send to agent for review</p>
+      <div class="info-box">
+        🔒 Your completed report is emailed directly to you.
       </div>
-      <span>→</span>
-    </div>
 
-    <div class="card" onclick="goHome()">
-      <div>
-        <strong>Back</strong>
-        <p>Return to home screen</p>
+      <label>PROPERTY ADDRESS</label>
+      <input type="text" />
+
+      <div class="row">
+        <div>
+          <label>YOUR NAME</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>YOUR EMAIL</label>
+          <input type="email" />
+        </div>
       </div>
-      <span>←</span>
+
+      <label>LEASE START DATE</label>
+      <input type="date" />
+
+      <button class="primary-btn" onclick="startWalkthrough()">
+        Start Walkthrough →
+      </button>
     </div>
 
   </div>
 </div>
 
-<script src="script.js"></script>
-
+<script src="script.js?v=2"></script>
 </body>
 </html>
