@@ -18,12 +18,8 @@ body {
   text-align: center;
 }
 
-.logo {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.logo span {
+.logo span,
+.title span {
   color: #4da3ff;
 }
 
@@ -40,23 +36,10 @@ body {
   border-radius: 15px;
 }
 
-.title {
-  font-size: 28px;
-}
-
-.title span {
-  color: #4da3ff;
-}
-
 .subtitle {
   font-size: 12px;
-  letter-spacing: 1px;
   color: #888;
   margin-bottom: 30px;
-}
-
-h3 {
-  margin: 20px 0 5px;
 }
 
 .helper {
@@ -74,17 +57,10 @@ h3 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .card:hover {
   background: #e3e3e3;
-}
-
-.card p {
-  margin: 5px 0 0;
-  font-size: 13px;
-  color: #666;
 }
 
 .footer {
@@ -92,7 +68,9 @@ h3 {
   font-size: 11px;
   color: #aaa;
 }
-/* Top bar */
+
+/* ===== TENANT PAGE ===== */
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -116,13 +94,8 @@ h3 {
   font-size: 12px;
 }
 
-/* Form container */
 .form-container {
   text-align: left;
-}
-
-.form-container h1 {
-  margin-bottom: 5px;
 }
 
 .info-box {
@@ -134,7 +107,6 @@ h3 {
   font-size: 14px;
 }
 
-/* Inputs */
 label {
   font-size: 11px;
   color: #777;
@@ -148,10 +120,8 @@ input {
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
-/* Row layout */
 .row {
   display: flex;
   gap: 10px;
@@ -161,7 +131,6 @@ input {
   flex: 1;
 }
 
-/* Button */
 .primary-btn {
   width: 100%;
   margin-top: 20px;
@@ -171,9 +140,4 @@ input {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 16px;
-}
-
-.primary-btn:hover {
-  background: #333;
 }
