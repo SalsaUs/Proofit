@@ -1,91 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mini Flappy Demo</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #87ceeb;
-        margin: 0;
-        overflow: hidden;
-    }
-    canvas {
-        background-color: #87ceeb;
-        display: block;
-        margin: 20px auto;
-        border: 2px solid #000;
-    }
-    #menu {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px #000;
-    }
-    button {
-        padding: 10px 20px;
-        font-size: 18px;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProofIt</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<div id="menu">
-    <h1>Mini Flappy Demo</h1>
-    <button onclick="startGame()">Start Game</button>
+<div class="phone-frame">
+  <div class="app">
+
+    <h1 class="logo">Proof<span>It</span></h1>
+
+    <div class="icon-box">📋✔</div>
+
+    <h2 class="title">Proof<span>It</span></h2>
+    <p class="subtitle">PROPERTY CONDITION REPORTS</p>
+
+    <h3>Who's using the app today?</h3>
+    <p class="helper">Select your role to get started</p>
+
+    <div class="card" onclick="selectRole('tenant')">
+      <div>
+        <strong>I'm a Tenant</strong>
+        <p>Document your property on move-in</p>
+      </div>
+      <span>→</span>
+    </div>
+
+    <div class="card" onclick="selectRole('agent')">
+      <div>
+        <strong>I'm an Agent</strong>
+        <p>Run a professional property inspection</p>
+      </div>
+      <span>→</span>
+    </div>
+
+    <p class="footer">ProofIt — Built for Australian renters & agents</p>
+
+  </div>
 </div>
 
-<canvas id="gameCanvas" width="400" height="400"></canvas>
-
-<script>
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
-
-let bird = { x: 50, y: 200, width: 20, height: 20, velocity: 0 };
-let gravity = 0.6;
-let isPlaying = false;
-
-function startGame() {
-    document.getElementById('menu').style.display = 'none';
-    isPlaying = true;
-    bird.y = 200;
-    bird.velocity = 0;
-    requestAnimationFrame(gameLoop);
-}
-
-document.addEventListener('keydown', function(e) {
-    if(e.code === "Space" && isPlaying) {
-        bird.velocity = -10;
-    }
-});
-
-function gameLoop() {
-    if(!isPlaying) return;
-
-    // Update
-    bird.velocity += gravity;
-    bird.y += bird.velocity;
-    if(bird.y + bird.height > canvas.height) {
-        bird.y = canvas.height - bird.height;
-        bird.velocity = 0;
-    }
-    if(bird.y < 0) bird.y = 0;
-
-    // Draw
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "yellow";
-    ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
-
-    requestAnimationFrame(gameLoop);
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
