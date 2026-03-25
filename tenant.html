@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tenant - ProofIt</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="phone-frame">
+  <div class="app">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <button class="home-btn" onclick="goHome()">🏠</button>
+      <h2>New Move-In Report</h2>
+      <span class="badge">Tenant</span>
+    </div>
+
+    <!-- Content -->
+    <div class="form-container">
+      <h1>Let's get started</h1>
+      <p class="helper">Fill in your details before the walkthrough</p>
+
+      <div class="info-box">
+        🔒 Your completed report is emailed directly to you — timestamped evidence you keep, just in case.
+      </div>
+
+      <!-- Property Address -->
+      <label>PROPERTY ADDRESS</label>
+      <input type="text" placeholder="12 Collins Street, Melbourne VIC" />
+
+      <!-- Name + Email -->
+      <div class="row">
+        <div>
+          <label>YOUR NAME</label>
+          <input type="text" placeholder="Your name" />
+        </div>
+
+        <div>
+          <label>YOUR EMAIL</label>
+          <input type="email" placeholder="you@email.com" />
+        </div>
+      </div>
+
+      <!-- Date -->
+      <label>LEASE START DATE</label>
+      <input type="date" />
+
+      <!-- Button -->
+      <button class="primary-btn" onclick="startWalkthrough()">
+        Start Walkthrough →
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
