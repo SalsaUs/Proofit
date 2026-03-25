@@ -1,7 +1,7 @@
 function selectRole(role) {
-  if (role === "tenant") {
+  if (role === 'tenant') {
     window.location.href = "tenant.html";
-  } else if (role === "agent") {
+  } else {
     window.location.href = "agent.html";
   }
 }
