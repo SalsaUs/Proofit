@@ -3,43 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tenant Portal</title>
-  <link rel="stylesheet" href="tenant.css" />
+  <title>Tenant - ProofIt</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <div class="container">
+<div class="phone-frame">
+  <div class="app">
 
-    <!-- LOGIN VIEW -->
-    <div id="loginView" class="card">
-      <h2>Tenant Login</h2>
+    <h1 class="logo">Proof<span>It</span></h1>
 
-      <input type="text" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
+    <h2 class="title">Tenant Portal</h2>
+    <p class="subtitle">MOVE-IN CONDITION REPORT</p>
 
-      <button onclick="login()">Login</button>
-
-      <p class="small">Demo only — no backend connected</p>
+    <div class="card">
+      <div>
+        <strong>Start Report</strong>
+        <p>Begin documenting your property</p>
+      </div>
+      <span>→</span>
     </div>
 
-    <!-- DASHBOARD VIEW -->
-    <div id="dashboardView" class="card hidden">
-      <h2>Tenant Dashboard</h2>
-
-      <p id="welcomeText"></p>
-
-      <div class="actions">
-        <button onclick="viewRent()">View Rent</button>
-        <button onclick="viewMessages()">Messages</button>
-        <button onclick="logout()">Logout</button>
+    <div class="card">
+      <div>
+        <strong>Upload Photos</strong>
+        <p>Add condition evidence</p>
       </div>
+      <span>→</span>
+    </div>
 
-      <div id="outputBox" class="output"></div>
+    <div class="card">
+      <div>
+        <strong>Submit Report</strong>
+        <p>Send to agent for review</p>
+      </div>
+      <span>→</span>
+    </div>
+
+    <div class="card" onclick="goHome()">
+      <div>
+        <strong>Back</strong>
+        <p>Return to home screen</p>
+      </div>
+      <span>←</span>
     </div>
 
   </div>
+</div>
 
-  <script src="tenant.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
