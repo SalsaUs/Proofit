@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My First GitHub Page</title>
+    <title>Interactive GitHub Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
             background-color: #f0f8ff;
+            transition: background-color 0.5s;
         }
         h1 {
             color: #0077cc;
@@ -20,23 +21,30 @@
         button {
             padding: 10px 20px;
             font-size: 16px;
-            margin-top: 20px;
+            margin: 10px;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1 id="title">Hello, GitHub!</h1>
-    <p id="message">This is my first page displayed online using GitHub.</p>
+    <p id="message">This is my interactive page.</p>
     
-    <button onclick="changeText()">Click Me!</button>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeBackground()">Change Background</button>
     
     <script>
         function changeText() {
             const title = document.getElementById('title');
             const message = document.getElementById('message');
-            title.textContent = "You clicked the button!";
-            message.textContent = "Welcome to interactive GitHub Pages!";
+            title.textContent = "You clicked the text button!";
+            message.textContent = "Now try changing the background color!";
+        }
+
+        function changeBackground() {
+            const colors = ["#f0f8ff", "#ffebcd", "#d1ffd1", "#ffd1dc", "#d1e0ff"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 </body>
