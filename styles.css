@@ -141,3 +141,7 @@ input {
   border-radius: 12px;
   cursor: pointer;
 }
+
+.arrow {
+  font-size: 24px;
+}
