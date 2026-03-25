@@ -6,7 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* BACKGROUND + CENTERING */
+/* CENTER APP */
 body {
   background: #f2f4f8;
   display: flex;
@@ -21,113 +21,68 @@ body {
   height: 820px;
   background: #fff;
   border-radius: 30px;
-  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
-/* MAIN APP AREA */
+/* APP */
 .app {
-  padding: 20px;
+  padding: 25px;
 }
 
-/* TOP BAR */
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+/* TEXT */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.top-bar h2 {
-  font-size: 16px;
-}
-
-/* HOME BUTTON */
-.home-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* BADGE */
-.badge {
-  background: #e8f0ff;
+.logo span {
   color: #2b6fff;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
 }
 
-/* FORM CONTAINER */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.icon {
+  font-size: 30px;
+  margin: 10px 0;
 }
 
-/* HEADINGS */
-.form-container h1 {
+.title {
   font-size: 22px;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 .helper {
   color: #666;
-  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-/* INFO BOX */
-.info-box {
-  background: #eef7ff;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 13px;
-  color: #333;
-}
-
-/* LABELS */
-label {
-  font-size: 12px;
-  color: #444;
-  margin-top: 10px;
-}
-
-/* INPUTS */
-input {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 14px;
-  width: 100%;
-}
-
-/* ROW (side-by-side inputs) */
-.row {
+/* CARD */
+.card {
   display: flex;
-  gap: 10px;
-}
-
-.row div {
-  flex: 1;
-}
-
-/* PRIMARY BUTTON */
-.primary-btn {
-  margin-top: 20px;
-  padding: 14px;
-  border: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 12px;
   border-radius: 12px;
-  background: #2b6fff;
-  color: white;
-  font-size: 15px;
+  border: 1px solid #eee;
   cursor: pointer;
+  background: #fafafa;
 }
 
-.primary-btn:hover {
-  background: #1f5ae0;
+.card:hover {
+  background: #f0f6ff;
 }
 
-/* ADDRESS WIDTH OVERRIDE */
-.address {
-  width: 60%;
+/* FOOTER */
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
 }
