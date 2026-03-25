@@ -5,20 +5,19 @@
     <title>My First GitHub Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f0f8ff;
+    <h1 id="title">Hello, GitHub!</h1>
+    <p id="message">This is my first page displayed online using GitHub.</p>
+    
+    <button onclick="changeText()">Click Me!</button>
+    
+    <script>
+        function changeText() {
+            const title = document.getElementById('title');
+            const message = document.getElementById('message');
+            title.textContent = "You clicked the button!";
+            message.textContent = "Welcome to interactive GitHub Pages!";
         }
-        h1 {
-            color: #0077cc;
-        }
-        p {
-            color: #333333;
-            font-size: 18px;
-        }
-    </style>
-</head>
+    </script>
 <body>
     <h1>Hello, GitHub!</h1>
     <p>This is my first page displayed online using GitHub.</p>
