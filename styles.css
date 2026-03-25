@@ -6,15 +6,16 @@
   font-family: Arial, sans-serif;
 }
 
-/* BACKGROUND */
+/* BACKGROUND + CENTERING */
 body {
   background: #f2f4f8;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* PHONE FRAME (visual app container) */
+/* PHONE FRAME */
 .phone-frame {
   width: 420px;
   height: 820px;
@@ -126,7 +127,7 @@ input {
   background: #1f5ae0;
 }
 
-/* CUSTOM WIDTH OVERRIDE (your address field) */
+/* ADDRESS WIDTH OVERRIDE */
 .address {
   width: 60%;
 }
