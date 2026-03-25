@@ -2,97 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProofIt — Tenant Move-In Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tenant - ProofIt</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="app-wrap">
-    <div class="app">
 
-      <!-- SCREEN 1: Setup -->
-      <div class="screen active" id="s-setup">
-        <div class="topbar">
-          <button class="home-btn" onclick="window.location.href='index.html'">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-6H9v6H4a1 1 0 01-1-1V10.5z" fill="#ffffff"/>
-            </svg>
-          </button>
-          <div class="topbar-title">New Move-In Report</div>
-          <div class="topbar-badge">Tenant</div>
-        </div>
-        <div class="body-scroll">
-          <div class="section-title">Let's get started</div>
-          <div class="section-sub">Fill in your details before the walkthrough</div>
-          <div class="info-banner">
-            <div class="info-icon">🔒</div>
-            <div class="info-text">Your completed report is emailed directly to you — timestamped evidence you keep, just in case.</div>
-          </div>
-          <div class="field-label">Property address</div>
-          <input class="field-input" type="text" id="t-addr" placeholder="12 Collins Street, Melbourne VIC" />
-          <div class="field-row">
-            <div>
-              <div class="field-label">Your name</div>
-              <input class="field-input" type="text" id="t-name" placeholder="Your name" />
-            </div>
-            <div>
-              <div class="field-label">Your email</div>
-              <input class="field-input" type="email" id="t-email" placeholder="you@email.com" />
-            </div>
-          </div>
-          <div class="field-label">Lease start date</div>
-          <input class="field-input" type="date" id="t-date" />
-          <button class="btn-primary" onclick="startTenant()">Start Walkthrough →</button>
-        </div>
-      </div>
+<div class="phone-frame">
+  <div class="app">
 
-      <!-- SCREEN 2: Inspection -->
-      <div class="screen" id="s-insp">
-        <div class="topbar">
-          <button class="home-btn" onclick="window.location.href='index.html'">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-6H9v6H4a1 1 0 01-1-1V10.5z" fill="#ffffff"/>
-            </svg>
-          </button>
-          <div class="topbar-title" id="t-insp-addr">Property</div>
-          <div class="topbar-badge">Tenant</div>
-        </div>
-        <div class="progress-wrap">
-          <div class="entries-count" id="t-entries-count"><strong>0 entries</strong> recorded</div>
-        </div>
-        <div class="tabs-row" id="t-tabs"></div>
-        <div class="body-scroll" id="t-insp-body"></div>
-        <div class="bottom-bar">
-          <button class="btn-back" onclick="tPrevRoom()">← Back</button>
-          <button class="btn-next" id="t-btn-next" onclick="tNextRoom()">Next Room →</button>
-        </div>
-      </div>
-
-      <!-- SCREEN 3: Report -->
-      <div class="screen" id="s-report">
-        <div class="topbar">
-          <button class="home-btn" onclick="window.location.href='index.html'">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-6H9v6H4a1 1 0 01-1-1V10.5z" fill="#ffffff"/>
-            </svg>
-          </button>
-          <div class="topbar-title">Your Report</div>
-          <div class="topbar-badge">Ready</div>
-        </div>
-        <div class="body-scroll" id="t-report-body"></div>
-        <div class="bottom-bar" style="flex-direction:column;gap:8px;">
-          <button class="send-btn" id="t-send-btn">Email Report to Myself →</button>
-          <div style="display:flex;gap:10px;">
-            <button class="btn-back" style="flex:1;" onclick="showScreen('s-insp')">← Back</button>
-            <button class="pdf-btn" style="flex:2;">Save as PDF</button>
-          </div>
-        </div>
-      </div>
-
+    <div class="top-bar">
+      <button class="home-btn" onclick="goHome()">🏠</button>
+      <h2>New Move-In Report</h2>
+      <span class="badge">Tenant</span>
     </div>
+
+    <div class="form-container">
+      <h1>Let's get started</h1>
+      <p class="helper">Fill in your details before the walkthrough</p>
+
+      <div class="info-box">
+        🔒 Your completed report is emailed directly to you.
+      </div>
+
+      <label>PROPERTY ADDRESS</label>
+      <input type="text" />
+
+      <div class="row">
+        <div>
+          <label>YOUR NAME</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>YOUR EMAIL</label>
+          <input type="email" />
+        </div>
+      </div>
+
+      <label>LEASE START DATE</label>
+      <input type="date" />
+
+      <button class="primary-btn" onclick="startWalkthrough()">
+        Start Walkthrough →
+      </button>
+    </div>
+
   </div>
-  <input type="file" accept="image/*" id="photo-input" style="display:none;" />
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js?v=2"></script>
 </body>
 </html>
