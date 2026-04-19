@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Report</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="report-page">
+
+  <div class="phone-frame">
+    <div class="app">
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <button class="home-btn" onclick="goHome()">
+          <img src="images/home.png" alt="Home">
+        </button>
+
+        <p class="report-title">Create your Report</p>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="container">
+
+        <!-- HEADER CARD -->
+        <div class="inspection-card">
+
+          <h2>Proof It Move-In Report</h2>
+          <p class="subtitle">Tenant Condition Report — Personal Copy</p>
+
+          <div class="report-grid">
+
+            <div class="report-box">
+              <label>ADDRESS</label>
+              <p id="reportAddress">—</p>
+            </div>
+
+            <div class="report-box">
+              <label>TENANT</label>
+              <p id="reportTenant">—</p>
+            </div>
+
+            <div class="report-box">
+              <label>LEASE START</label>
+              <p id="reportLease">—</p>
+            </div>
+
+            <div class="report-box">
+              <label>REPORT CREATED</label>
+              <p id="reportCreated"></p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box">
+          🔒 This report will be emailed as timestamped evidence.
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="empty-state">
+          No entries yet. Go back and add photos or notes.
+        </div>
+
+      </div>
+
+      <!-- Bottom Nav -->
+      <div class="bottom-nav report-actions">
+
+        <button class="btn primary" onclick="emailReport()">
+          Email Report to Myself →
+        </button>
+
+        <div class="report-row">
+          <button class="btn" onclick="goBackToInspection()">← Back</button>
+          <button class="btn" onclick="savePDF()">Save as PDF</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // LOAD DATA INTO REPORT
+    function loadReportPage() {
+      const data = JSON.parse(localStorage.getItem("reportData"));
+
+      if (data) {
+        document.getElementById("reportAddress").textContent = data.address || "—";
+        document.getElementById("reportTenant").textContent = data.tenantName || "—";
+        document.getElementById("reportLease").textContent = data.inspectionDate || "—";
+      }
+
+      // Always set current date/time
+      document.getElementById("reportCreated").textContent =
+        new Date().toLocaleString();
+    }
+
+    window.addEventListener("DOMContentLoaded", loadReportPage);
+
+    function goBackToInspection() {
+      window.location.href = "./tenant-inspection.html";
+    }
+
+    function emailReport() {
+      alert("Email functionality coming soon");
+    }
+
+    function savePDF() {
+      alert("PDF export coming soon");
+    }
+  </script>
+
+</body>
+</html>
