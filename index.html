@@ -6,6 +6,7 @@
   <title>ProofIt</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
 <div class="phone-frame">
@@ -13,12 +14,15 @@
 
     <h1 class="logo">Proof<span>It</span></h1>
 
-    <div class="icon-box">📋✔</div>
+    <div class="icon-box">
+      <span class="clipboard">📋</span>
+      <span class="tick">✔</span>
+    </div>
 
     <h2 class="title">Proof<span>It</span></h2>
     <p class="subtitle">PROPERTY CONDITION REPORTS</p>
 
-    <h3>Who's using the app today?</h3>
+    <h3 class="heading">Who's using the app today?</h3>
     <p class="helper">Select your role to get started</p>
 
     <div class="card" onclick="selectRole('tenant')">
@@ -32,7 +36,7 @@
     <div class="card" onclick="selectRole('agent')">
       <div>
         <strong>I'm an Agent</strong>
-        <p>Run a professional property inspection</p>
+        <p>Run a professional property inspection (Coming soon)</p>
       </div>
       <span class="arrow">→</span>
     </div>
@@ -42,6 +46,6 @@
   </div>
 </div>
 
-<script src="script.js?v=2"></script>
+<script src="script.js"></script>
 </body>
 </html>
