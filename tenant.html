@@ -12,9 +12,19 @@
   <div class="app">
 
     <div class="top-bar">
-      <button class="home-btn" onclick="goHome()">🏠</button>
-      <h2>New Move-In Report</h2>
-      <span class="badge">Tenant</span>
+      <div class="top-left">
+        <button class="home-btn" onclick="goHome()">
+          <img src="images/home.png" alt="Home">
+        </button>
+      </div>
+
+      <div class="top-center">
+        <h2>New Move-In Report</h2>
+      </div>
+
+      <div class="top-right">
+        <span class="badge">Tenant</span>
+      </div>
     </div>
 
     <div class="form-container">
@@ -22,25 +32,25 @@
       <p class="helper">Fill in your details before the walkthrough</p>
 
       <div class="info-box">
-        🔒 Your completed report is emailed directly to you.
+        Your completed report will be emailed to you.
       </div>
 
       <label>PROPERTY ADDRESS</label>
-      <input type="text" class="address-input" />
+      <input id="address" type="text" class="address-input" />
 
       <div class="row">
         <div>
           <label>YOUR NAME</label>
-          <input type="text" />
+          <input id="tenantName" type="text" class="name-input" />
         </div>
         <div>
           <label>YOUR EMAIL</label>
-          <input type="email" />
+          <input id="tenantEmail" type="email" class="email-input" />
         </div>
       </div>
 
       <label>LEASE START DATE</label>
-      <input type="date" />
+      <input id="inspectionDate" type="date" class="date-input" />
 
       <button class="primary-btn" onclick="startWalkthrough()">
         Start Walkthrough →
@@ -50,6 +60,48 @@
   </div>
 </div>
 
+<script src="script.js"></script>
+
+<script>
+  // SAVE DATA
+  function saveReportData() {
+    const data = {
+      address: document.getElementById("address")?.value || "",
+      tenantName: document.getElementById("tenantName")?.value || "",
+      tenantEmail: document.getElementById("tenantEmail")?.value || "",
+      inspectionDate: document.getElementById("inspectionDate")?.value || ""
+    };
+
+    localStorage.setItem("reportData", JSON.stringify(data));
+  }
+
+  // LOAD DATA BACK INTO INPUTS
+  function loadReportData() {
+    const data = JSON.parse(localStorage.getItem("reportData"));
+    if (!data) return;
+
+    if (document.getElementById("address"))
+      document.getElementById("address").value = data.address || "";
+
+    if (document.getElementById("tenantName"))
+      document.getElementById("tenantName").value = data.tenantName || "";
+
+    if (document.getElementById("tenantEmail"))
+      document.getElementById("tenantEmail").value = data.tenantEmail || "";
+
+    if (document.getElementById("inspectionDate"))
+      document.getElementById("inspectionDate").value = data.inspectionDate || "";
+  }
+
+  // AUTO SAVE WHEN TYPING
+  document.addEventListener("input", saveReportData);
+
+  // LOAD WHEN PAGE OPENS
+  window.addEventListener("DOMContentLoaded", loadReportData);
+</script>
+
+</body>
+</html>
 <script src="script.js?v=2"></script>
 </body>
 </html>
