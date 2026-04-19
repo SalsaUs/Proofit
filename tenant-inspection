@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tenant Inspection</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="phone-frame">
+    <div class="app">
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+
+        <div class="top-left">
+          <button class="home-btn" onclick="goHome()">
+            <img src="images/home.png" alt="Home">
+          </button>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">Room 1 of 5</p>
+        </div>
+
+      </div>
+
+      <!-- CONTENT -->
+      <div class="container">
+
+        <!-- ROOM TABS -->
+        <div class="room-tabs">
+          <button class="tab active" onclick="switchRoom(0)">Entry</button>
+          <button class="tab" onclick="switchRoom(1)">Living</button>
+          <button class="tab" onclick="switchRoom(2)">Kitchen</button>
+          <button class="tab" onclick="switchRoom(3)">Bathroom</button>
+          <button class="tab" onclick="switchRoom(4)">Bedroom</button>
+        </div>
+
+        <!-- CARDS -->
+        <div id="cards-wrapper"></div>
+
+        <!-- Add Button -->
+        <button class="add-card-btn" onclick="addInspectionCard()">
+          + Add Another Entry
+        </button>
+
+      </div>
+
+      <!-- Bottom Nav -->
+      <div class="bottom-nav">
+        <button class="btn" onclick="goBack()">← Back</button>
+        <button class="btn primary" onclick="nextRoom()">Next Room →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ONLY ONE SCRIPT SYSTEM (required for fix) -->
+  <script src="script.js"></script>
+
+</body>
+</html>
